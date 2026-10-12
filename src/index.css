@@ -1,0 +1,342 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@font-face {
+  font-family: 'Gambetta';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('https://framerusercontent.com/third-party-assets/fontshare/wf/LTP7L3IV35TGGKXISPM35MXAMA7PX7BF/JOULNGXDDVVIJYXX35DI2FQJG2H4EOGJ/UMQTMTAEPCAFNEJDVEURBIXJENGOHOWO.woff2') format('woff2');
+}
+
+:root {
+  --font-courier: "Courier New", "Courier New Placeholder", monospace;
+  --font-helvetica: "Helvetica", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+  --font-gambetta: "Gambetta", "Gambetta Placeholder", serif;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-helvetica);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+html.dark, body.dark {
+  background-color: #0a0a0a;
+  color: #ffffff;
+}
+
+/* Custom link hover pill styling mirroring Framer interaction */
+.framer-link-tag {
+  font-family: var(--font-gambetta);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: -0.4px;
+  line-height: 16px;
+  text-transform: lowercase;
+  text-decoration: none;
+  background-color: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  padding: 0 2px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+  white-space: nowrap;
+}
+
+.framer-link-tag:hover {
+  background-color: #ff0000 !important;
+  color: #ffffff !important;
+}
+
+/* Aesthetic Animated Sound Equalizer - Optically aligned to font baseline */
+.eq-bars {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 1.5px;
+  height: 7.5px;
+  width: 7.5px;
+  flex-shrink: 0;
+  margin-bottom: 2px; /* Precision optical alignment with Gambetta text baseline */
+}
+
+.eq-bar {
+  width: 1.5px;
+  height: 7.5px;
+  background-color: currentColor;
+  border-radius: 0.75px;
+  transform-origin: bottom;
+  will-change: transform;
+}
+
+.eq-bar-1 {
+  animation: eq-anim-1 0.7s ease-in-out infinite alternate;
+}
+
+.eq-bar-2 {
+  animation: eq-anim-2 0.45s ease-in-out infinite alternate;
+}
+
+.eq-bar-3 {
+  animation: eq-anim-3 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes eq-anim-1 {
+  0% { transform: scaleY(0.25); }
+  50% { transform: scaleY(0.85); }
+  100% { transform: scaleY(0.35); }
+}
+
+@keyframes eq-anim-2 {
+  0% { transform: scaleY(0.95); }
+  50% { transform: scaleY(0.2); }
+  100% { transform: scaleY(0.7); }
+}
+
+@keyframes eq-anim-3 {
+  0% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+  100% { transform: scaleY(0.45); }
+}
+
+/* --- JAPANESE 2000s BANNER RIBBON ANIMATIONS & STYLES --- */
+@keyframes ribbon-scroll-up {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+@keyframes ribbon-scroll-down {
+  0% { transform: translateY(-50%); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes retro-marquee-x {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes retro-blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.animate-ribbon-up {
+  animation: ribbon-scroll-up 110s linear infinite;
+}
+
+.animate-ribbon-down {
+  animation: ribbon-scroll-down 110s linear infinite;
+}
+
+.animate-marquee-x {
+  animation: retro-marquee-x 95s linear infinite;
+}
+
+.animate-retro-blink {
+  animation: retro-blink 0.85s steps(1) infinite;
+}
+
+/* WOW EFFECTS FOR ASIAN / Y2K BANNERS */
+@keyframes holo-shimmer {
+  0% { transform: translateX(-150%) skewX(-20deg); }
+  100% { transform: translateX(250%) skewX(-20deg); }
+}
+
+.animate-holo-shimmer {
+  animation: holo-shimmer 3s ease-in-out infinite;
+}
+
+@keyframes steam-rise {
+  0% { transform: translateY(2px) scaleX(0.9); opacity: 0.3; }
+  50% { transform: translateY(-3px) scaleX(1.1); opacity: 0.9; }
+  100% { transform: translateY(-7px) scaleX(0.8); opacity: 0; }
+}
+
+.animate-steam-1 {
+  animation: steam-rise 1.8s ease-out infinite;
+}
+
+.animate-steam-2 {
+  animation: steam-rise 1.8s ease-out 0.6s infinite;
+}
+
+.animate-steam-3 {
+  animation: steam-rise 1.8s ease-out 1.2s infinite;
+}
+
+@keyframes paw-wave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-22deg); }
+}
+
+.animate-paw-wave {
+  transform-origin: bottom right;
+  animation: paw-wave 1.2s ease-in-out infinite;
+}
+
+@keyframes neon-glow {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 3px #ff0055); }
+  50% { opacity: 0.7; filter: drop-shadow(0 0 1px #ff0055); }
+}
+
+.animate-neon-glow {
+  animation: neon-glow 1.5s ease-in-out infinite;
+}
+
+@keyframes flame-flicker {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.15) translateY(-1px); }
+}
+
+.animate-flame {
+  animation: flame-flicker 0.6s ease-in-out infinite;
+}
+
+.pause-on-hover:hover {
+  animation-play-state: paused !important;
+}
+
+@keyframes spin-slow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 3s linear infinite;
+}
+
+@keyframes bounce-quick {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px) scale(1.08); }
+}
+
+.animate-bounce-quick {
+  animation: bounce-quick 0.9s cubic-bezier(0.28, 0.84, 0.42, 1) infinite;
+}
+
+@keyframes wiggle-frenzy {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-12deg) scale(1.05); }
+  75% { transform: rotate(12deg) scale(1.05); }
+}
+
+.animate-wiggle {
+  animation: wiggle-frenzy 0.7s ease-in-out infinite;
+}
+
+@keyframes laser-scan {
+  0% { transform: translateX(-100%); opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { transform: translateX(300%); opacity: 0.3; }
+}
+
+.animate-laser-scan {
+  animation: laser-scan 1.8s linear infinite;
+}
+
+@keyframes sparkle-pulse {
+  0%, 100% { transform: scale(0.9); opacity: 0.7; filter: drop-shadow(0 0 2px #fff); }
+  50% { transform: scale(1.2); opacity: 1; filter: drop-shadow(0 0 6px #ffeb3b); }
+}
+
+.animate-sparkle {
+  animation: sparkle-pulse 1s ease-in-out infinite;
+}
+
+@keyframes boba-float {
+  0% { transform: translateY(3px); opacity: 0.4; }
+  50% { transform: translateY(-2px); opacity: 1; }
+  100% { transform: translateY(-5px); opacity: 0; }
+}
+
+.animate-boba-float {
+  animation: boba-float 1.5s ease-out infinite;
+}
+
+@keyframes rainbow-bg {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); }
+}
+
+.animate-rainbow-cycle {
+  animation: rainbow-bg 6s linear infinite;
+}
+
+/* Classic Windows 98 / Y2K Bevel Borders */
+.retro-bevel {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ffffff #555555 #555555 #ffffff;
+  box-shadow: 1px 1px 0px rgba(0,0,0,0.4);
+}
+
+.retro-sunken {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #555555 #ffffff #ffffff #555555;
+}
+
+.retro-pixel-border {
+  border: 1.5px dashed #ffff00;
+  box-shadow: 0 0 0 1px #000;
+}
+
+.retro-arcade-border {
+  border: 2px solid #ffd700;
+  box-shadow: inset 0 0 4px #ff0055, 0 0 4px #ffd700;
+}
+
+.retro-cyber-border {
+  border: 1.5px solid #00f0ff;
+  box-shadow: 0 0 5px rgba(0,240,255,0.7), inset 0 0 3px rgba(0,240,255,0.4);
+}
+
+.retro-newspaper-border {
+  border: 1.5px solid #2b1810;
+  box-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+}
+
+.retro-hot-border {
+  border: 2px solid #ff0000;
+  box-shadow: 0 0 6px #ff7700;
+}
+
+.retro-matrix-border {
+  border: 1.5px solid #00ff66;
+  box-shadow: 0 0 5px rgba(0, 255, 102, 0.8), inset 0 0 3px rgba(0, 50, 20, 0.5);
+}
+
+.retro-pink-border {
+  border: 1.5px dashed #ff007f;
+  box-shadow: 0 0 5px #ff007f;
+}
+
+.retro-gold-border {
+  border: 2px solid #ffe600;
+  box-shadow: 1px 1px 0px #b38600, inset 0 0 4px rgba(255, 230, 0, 0.6);
+}
+
+.retro-hazard-stripes {
+  background: repeating-linear-gradient(-45deg, #000, #000 4px, #ffd700 4px, #ffd700 8px);
+}
+
+.retro-dots-border {
+  border: 1.5px dotted #00f0ff;
+}
+
+@keyframes marquee-tag {
+  0% { transform: translateX(0); }
+  50% { transform: translateX(-4px); }
+  100% { transform: translateX(0); }
+}
+
+.animate-tag-nudge {
+  animation: marquee-tag 1.2s ease-in-out infinite;
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Panachyow",
+  "description": "A creative personal brand inspired by modern design, digital aesthetics, and a distinctive visual style.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
